@@ -1,12 +1,13 @@
-import React from "react";
-import NavBar from "../components/NavBar";
+import React from 'react'
+import NavBar from '../components/NavBar'
 
 const UpdateElement = () => {
-  return;
-  <>
-    <NavBar />
-    <h1>hello</h1>
-  </>;
-};
+  return (
+    <>
+    <NavBar/>
+    <div>UpdateElement</div>
+    </>
+  )
+}
 
-export default UpdateElement;
+export default UpdateElement

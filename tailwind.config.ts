@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
+  screens: {
+    'xs': '475px',
+  },
   plugins: [],
 };
 export default config;

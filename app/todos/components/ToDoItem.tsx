@@ -1,48 +1,32 @@
-{/*import { ToDoStruct } from '@/app/utils/types/todoItem'
-import React from 'react'
-
-interface ToDoItemProps{
-    todo:ToDoStruct
-}
-
-const ToDoItem = ({todo}:ToDoItemProps) => {
-  return (
-    <div className="">
-      <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 hover:bg-slate-300 grow ">
-        {todo.title}    
-        <input type="checkbox" 
-        checked={todo.completed}
-        className="scale-150" />     
-      </label>
-    </div>
-  )
-}
-
-export default ToDoItem*/}
-import { ToDoStruct } from '@/app/utils/types/todoItem'
-import React from 'react'
+import { ToDoStruct } from "@/app/utils/types/todoItem";
+import React from "react";
 
 interface ToDoItemProps {
-    todo: ToDoStruct,
-    onDelete: (id: number) => void // Función para manejar la eliminación de un todo
+  todo: ToDoStruct;
+  onDelete: (id: number) => void; 
 }
 
 const ToDoItem = ({ todo, onDelete }: ToDoItemProps) => {
-    const handleDelete = () => {
-        onDelete(todo.id); // Llama a la función onDelete con el ID del todo a eliminar
-    }
+  const handleDelete = () => {
+    onDelete(todo.id); 
+  };
 
-    return (
-        <div className="">
-            <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 hover:bg-slate-300 grow">
-                {todo.title}
-                <input type="checkbox"
-                    checked={todo.completed}
-                    className="scale-150" />
-                <button onClick={handleDelete} className="ml-2 text-red-600 hover:text-red-800">Eliminar</button> {/* Botón de eliminación */}
-            </label>
+  return (
+    <div className="">
+      <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 hover:bg-slate-300 grow">
+        {todo.title}
+        <div className="flex grow justify-end">
+        <input type="checkbox" checked={todo.completed} className="scale-150" />
+        <button
+          onClick={handleDelete}
+          className="ml-4  text-black border border-black rounded-lg px-5 py-1 hover:bg-red-500 hover:border-red-500 hover:font-bold bg-white"
+        >
+          Delete
+        </button>
         </div>
-    )
-}
+      </label>
+    </div>
+  );
+};
 
-export default ToDoItem
+export default ToDoItem;

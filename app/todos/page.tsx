@@ -70,7 +70,7 @@ const ToDoList = () => {
                         <ToDoItem
                             key={todo.id}
                             todo={todo}
-                            onDelete={handleDeleteTodo} // Pasa la función de eliminación como prop
+                            onDelete={handleDeleteTodo} 
                         />
                     ))}
                 </div>
