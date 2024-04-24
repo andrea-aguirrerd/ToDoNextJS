@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ElementStruct } from "../utils/types/elementItem";
 import NavBar from "../components/NavBar";
+import { ELEMENTS_BASEURL } from "../api/apiEndpoints";
 
 const ListElements = () => {
   const [elements, setElements] = useState<ElementStruct[]>([]);
@@ -14,7 +15,7 @@ const ListElements = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://crudcrud.com/api/886627e075224f9da6d3b6056ce822c4/unicorns"
+      ELEMENTS_BASEURL
     );
     const data = await response.json();
     setElements(data);
@@ -23,7 +24,7 @@ const ListElements = () => {
   const handleDelete = async () => {
     if (deleteId) {
       await fetch(
-        `https://crudcrud.com/api/886627e075224f9da6d3b6056ce822c4/unicorns/${deleteId}`,
+        `${ELEMENTS_BASEURL}${deleteId}`,
         {
           method: "DELETE",
         }
@@ -35,14 +36,12 @@ const ListElements = () => {
 
   return (
     <>
-      {" "}
-      <NavBar />
       <div className="justify-center items-center h-screen pb-5 overflow-scroll space-y-3 bg-gray-200">
         <h1 className="text-4xl text-center font-mono text-white bg-green-900 pt-5 pb-5">
           Elements Table
         </h1>
-        <div className="relative overflow-x-scroll shadow-md sm:rounded-lg m-auto container bg-white">
-          <table className="table-auto text-lg w-full text-left border-spacing-3">
+        <div className="relative overflow-x-scroll shadow-md sm:rounded-lg m-auto container bg-white ">
+          <table className="table-auto text-lg w-full text-center border-spacing-3  ">
             <thead className="text-lg text-gray-400 border-b-2">
               <tr>
                 <th className="border-r-2">Name</th>
@@ -51,7 +50,7 @@ const ListElements = () => {
                 <th className="pl-2">Delete</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="ml-6">
               {elements.map((element) => (
                 <tr key={element._id}>
                   <td>{element.name}</td>
@@ -73,7 +72,6 @@ const ListElements = () => {
             </tbody>
           </table>
         </div>
-
 
         {showConfirmation && (
           <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
