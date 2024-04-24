@@ -14,16 +14,13 @@ const Page = () => {
     const submitData = { name, age, colour };
 
     try {
-      const res = await fetch(
-        ELEMENTS_BASEURL,
-        {
-          method: "POST",
-          body: JSON.stringify(submitData),
-          headers: {
-            "content-type": "application/json",
-          },
-        }
-      );
+      const res = await fetch(ELEMENTS_BASEURL, {
+        method: "POST",
+        body: JSON.stringify(submitData),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
       if (res.ok) {
         toast.success("Element was created successfully!");
       }
@@ -35,6 +32,10 @@ const Page = () => {
     setAge(0);
     setColor("");
   };
+
+  {
+    /** https://stackoverflow.com/questions/76267351/how-to-fetch-data-server-side-in-the-latest-next-js-tried-getstaticprops-but-it*/
+  }
 
   return (
     <>
