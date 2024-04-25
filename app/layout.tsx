@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import NavBar from "./components/NavBar";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,15 +18,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className} >
-      <NavBar />
-      <Toaster position="top-center" toastOptions={
-        {style:{
-          padding:30,
-        }}
-      } />
-{children}</body>
-    </html>
+      <html lang="en">
+        <body className={inter.className}>
+          <NavBar />
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                padding: 30,
+              },
+            }}
+          />
+          {children}
+        </body>
+      </html>
   );
 }

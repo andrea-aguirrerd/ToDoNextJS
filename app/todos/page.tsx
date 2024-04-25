@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ToDoItem from './components/ToDoItem'
 import { ToDoStruct } from '../utils/types/todoItem';
 import NavBar from '../components/NavBar';
+import { TODOS_BASEURL } from '../api/apiEndpoints';
 
 const ToDoList = () => {
     const [todos, setTodos] = useState<ToDoStruct[]>([]);
@@ -12,7 +13,7 @@ const ToDoList = () => {
     }, []);
 
     const fetchData = async () => {
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+        const response = await fetch(TODOS_BASEURL);
         const data = await response.json();
         setTodos(data);
     };
