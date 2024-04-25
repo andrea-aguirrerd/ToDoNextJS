@@ -16,7 +16,7 @@ const ToDoItem = ({ todo, onDelete }: ToDoItemProps) => {
       <label className="flex items-center gap-2 border rounded-md p-2 border-gray-500 hover:bg-slate-300 grow">
         {todo.title}
         <div className="flex grow justify-end">
-        <input type="checkbox" checked={todo.completed} className="scale-150" />
+        <input type="checkbox" defaultChecked={todo.completed} className="scale-150" />
         <button
           onClick={handleDelete}
           className="ml-4  text-black border border-black rounded-lg px-5 py-1 hover:bg-red-500 hover:border-red-500 hover:font-bold bg-white"

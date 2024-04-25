@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ElementStruct } from "../utils/types/elementItem";
-import NavBar from "../components/NavBar";
 import { ELEMENTS_BASEURL } from "../api/apiEndpoints";
 
 const ListElements = () => {

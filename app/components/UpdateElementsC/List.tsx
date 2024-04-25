@@ -3,10 +3,19 @@ import { ELEMENTS_BASEURL } from "@/app/api/apiEndpoints";
 import { ElementStruct } from "@/app/utils/types/elementItem";
 import React, { useEffect, useState } from "react";
 
+interface ListUpdateProps{
+  clickedElement:(element: ElementStruct|null) =>void;
+}
 
-const ListElements = () => {
+const ListElements = ({clickedElement}:ListUpdateProps) => {
   const [elements, setElements] = useState<ElementStruct[]>([]);
-  const [selectedElement, setSelectedElement] = useState<ElementStruct>();
+
+  const onClickElement = (elementId: string) => {
+    const selected:(ElementStruct|any) = elements.find(element => element._id === elementId);
+    if (selected) {
+      clickedElement(selected);
+    }
+  };
 
   useEffect(() => {
     fetchData();
@@ -34,7 +43,7 @@ const ListElements = () => {
             </thead>
             <tbody className="ml-6 ">
               {elements.map((element) => (
-                <tr key={element._id} className="hover:bg-gray-300">
+                <tr key={element._id} className="hover:bg-gray-300" onClick={() => onClickElement(element._id)}>
                   <td>{element.name}</td>
                   <td>{element.age}</td>
                   <td>{element.colour}</td>

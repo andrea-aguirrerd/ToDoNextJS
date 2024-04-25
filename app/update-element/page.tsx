@@ -1,10 +1,13 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import List from '../components/UpdateElementsC/List'
 import UpdateForm from '../components/UpdateElementsC/UpdateForm'
+import { ElementStruct } from '../utils/types/elementItem'
 
 const UpdateElement = () => {
+  const [selectedElement, setSelectedElement] = useState<ElementStruct | null>(null);
+
   return (
     <>
       <h1
@@ -14,8 +17,8 @@ const UpdateElement = () => {
       >
         Update Element
       </h1>
-      <List/>
-      <UpdateForm/>
+      <List clickedElement={setSelectedElement}/>
+      <UpdateForm elementToUpdate={selectedElement}/>
     </>
   )
 }

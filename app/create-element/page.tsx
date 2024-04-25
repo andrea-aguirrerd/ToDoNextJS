@@ -54,6 +54,7 @@ const Page = () => {
                 type="text"
                 placeholder="Pegasus"
                 onChange={(e) => setName(e.target.value)}
+                value={name}
               />
             </div>
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -66,6 +67,7 @@ const Page = () => {
                 placeholder="8"
                 onChange={(e) => setAge(e.target.valueAsNumber)}
                 min="0"
+                value={age}
               />
             </div>
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -77,6 +79,7 @@ const Page = () => {
                 type="text"
                 placeholder="Yellow"
                 onChange={(e) => setColor(e.target.value)}
+                value={colour}
               />
             </div>
           </div>
