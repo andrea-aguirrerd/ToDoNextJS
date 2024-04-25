@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import ToDoItem from './components/ToDoItem'
 import { ToDoStruct } from '../utils/types/todoItem';
-import NavBar from '../components/NavBar';
 import { TODOS_BASEURL } from '../api/apiEndpoints';
 
 const ToDoList = () => {

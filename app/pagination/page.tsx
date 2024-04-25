@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
+import { PAGINATION_API } from "../api/apiEndpoints";
 
 interface CharacterStruct {
   id: number;
@@ -16,9 +17,7 @@ const PaginationComponent = () => {
     prev: "",
   });
 
-  const [currentPageUrl, setCurrentPageUrl] = useState(
-    "https://rickandmortyapi.com/api/character/"
-  );
+  const [currentPageUrl, setCurrentPageUrl] = useState(PAGINATION_API);
 
   useEffect(() => {
     const fetchData = async () => {
