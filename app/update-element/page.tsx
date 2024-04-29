@@ -1,9 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import NavBar from '../components/NavBar'
-import List from '../components/UpdateElementsC/List'
-import UpdateForm from '../components/UpdateElementsC/UpdateForm'
+import UpdateForm from '../components/update-element-c/update-form'
 import { ElementStruct } from '../utils/types/elementItem'
+import List from '../components/update-element-c/List'
 
 const UpdateElement = () => {
   const [selectedElement, setSelectedElement] = useState<ElementStruct | null>(null);

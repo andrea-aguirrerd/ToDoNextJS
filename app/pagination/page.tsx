@@ -1,8 +1,7 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-import NavBar from "../components/NavBar";
-import { PAGINATION_API } from "../api/apiEndpoints";
+import { PAGINATION_API } from "../utils/api";
+
 
 interface CharacterStruct {
   id: number;
@@ -10,7 +9,7 @@ interface CharacterStruct {
   image: string;
   species: string;
 }
-const PaginationComponent = () => {
+const Pagination = () => {
   const [characters, setCharacters] = useState<CharacterStruct[]>([]);
   const [info, setInfo] = useState({
     next: "",
@@ -89,4 +88,4 @@ const PaginationComponent = () => {
   );
 };
 
-export default PaginationComponent;
+export default Pagination;

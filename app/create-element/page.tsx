@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
 import toast from "react-hot-toast";
-import { ELEMENTS_BASEURL } from "../api/apiEndpoints";
+import { ELEMENTS_BASEURL } from "../utils/api";
 
-const Page = () => {
+const CreateElement = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [colour, setColor] = useState("");
@@ -97,4 +96,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default CreateElement;

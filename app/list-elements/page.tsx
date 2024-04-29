@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ElementStruct } from "../utils/types/elementItem";
-import { ELEMENTS_BASEURL } from "../api/apiEndpoints";
+import { ELEMENTS_BASEURL } from "../utils/api";
 
 const ListElements = () => {
   const [elements, setElements] = useState<ElementStruct[]>([]);
-  const [deleteId, setDeleteId] = useState<string>(""); // Id del elemento a eliminar
+  const [deleteId, setDeleteId] = useState<string>(""); 
   const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
-
+  
   useEffect(() => {
     fetchData();
   }, []);

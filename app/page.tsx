@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/shared/navbar";
 
 const menuOptions = [
   "List all To Dos",

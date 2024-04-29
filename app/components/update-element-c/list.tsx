@@ -1,6 +1,6 @@
 
 "use client";
-import { ELEMENTS_BASEURL } from "@/app/api/apiEndpoints";
+import { ELEMENTS_BASEURL } from "@/app/utils/api";
 import { ElementStruct } from "@/app/utils/types/elementItem";
 import React, { useEffect, useState } from "react";
 
